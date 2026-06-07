@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useCallback, useRef, useState } from "react";
 import { processWorkbook, type ProcessResult, type SheetReport } from "./lib/processTags";
 
@@ -100,10 +101,18 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-1.5 text-xs font-medium text-zinc-600 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400">
-            <span className="h-2 w-2 rounded-full bg-emerald-500" />
-            Runs in your browser · nothing uploaded
-          </span>
+          <div className="flex flex-wrap items-center gap-2">
+            <Link
+              href="/placements"
+              className="inline-flex w-fit items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-1.5 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800"
+            >
+              Placement Merge →
+            </Link>
+            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-1.5 text-xs font-medium text-zinc-600 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400">
+              <span className="h-2 w-2 rounded-full bg-emerald-500" />
+              Runs in your browser · nothing uploaded
+            </span>
+          </div>
         </header>
 
         {/* steps */}
